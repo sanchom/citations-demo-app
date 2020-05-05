@@ -29,7 +29,7 @@
   (define method (bytes->string/utf-8 (request-method req)))
   (cond
     [(equal? method "GET") (response/xexpr
-                            `(html (head (meta (charset "UTF-8"))
+                            `(html (head (meta ((charset "UTF-8")))
                                          (meta ((name "viewport") (content "width=device-width, initial-scale=1.0")))
                                          (title "Citations Demo (pollen-citations-mcgill)")
                                          (link ((rel "stylesheet") (href "site-style.css"))))
