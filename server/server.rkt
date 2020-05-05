@@ -29,10 +29,13 @@
   (define method (bytes->string/utf-8 (request-method req)))
   (cond
     [(equal? method "GET") (response/xexpr
-                            `(html (head (title "Racket Heroku App") (link ((rel "stylesheet") (href "site-style.css"))))
+                            `(html (head (meta (charset "UTF-8"))
+                                         (meta ((name "viewport") (content "width=device-width, initial-scale=1.0")))
+                                         (title "Citations Demo (pollen-citations-mcgill)")
+                                         (link ((rel "stylesheet") (href "site-style.css"))))
                                    (body (p "This is a demo of " (a ((href "https://github.com/sanchom/pollen-citations-mcgill")) "pollen-citations-mcgill")
                                             ", through its use in " (a ((href "https://github.com/sanchom/associate")) "associate") ", an article authoring engine. This demo will render your source "
-                                            "text into a webpage, but the full system can create Word documents and PDFs.")
+                                            "text into a webpage. The full system can create Word documents and PDFs. " (b "Once you click submit/envoyer, please be patient. It might take up to 10 seconds."))
                                          (form ((method "POST"))
                                                (textarea ((name "source") (id "source") (rows "20") (cols "80"))
                                                          "#lang pollen\n\n"

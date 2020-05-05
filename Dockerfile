@@ -15,9 +15,11 @@ RUN chmod -R a+rw /usr/share/racket/pkgs
 
 # Add this webapp's code
 ADD ./server /opt/server/
-ADD ./static-files /opt/static-files
 RUN raco pkg install -i --no-setup --deps search-auto -n my-heroku-app --copy /opt/server
 RUN raco setup -DK --fail-fast
+
+# Add some static files
+ADD ./static-files /opt/static-files
 
 # Expose is NOT supported by Heroku
 # EXPOSE 8080
