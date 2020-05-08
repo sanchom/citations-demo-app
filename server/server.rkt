@@ -54,6 +54,8 @@
                                                          "Here is a sentence that cites Guignard.◊note-cite[\"Guignard\"]\n\n"
                                                          "Here is a sentence that cites something else.◊note-see[\"Benecke\"]\n\n"
                                                          "Citing Guignard again, with a pinpoint.◊note-cite[\"Guignard\" #:pinpoint \"para 5\"]\n\n"
+
+                                                         "◊show-bibliography[]\n\n"
                                                          )
                                                (br)
                                                (input ((type "submit")))))))]
